@@ -112,32 +112,32 @@ These are some ways in which arrays are useful in python.
 
 * However, 'int' objects do not have shape and therefore s.shape() gives an error.
 
-  ## What is a Tensor?
-  A Tensor can be thought of as a collection of matrices. It has dimensions k x m x n.
-  **NOTE:** Scalars, vectors and matrices are also tensors of rank 0,1,2 respectively.
+## What is a Tensor?
+A Tensor can be thought of as a collection of matrices. It has dimensions k x m x n.
+**NOTE:** Scalars, vectors and matrices are also tensors of rank 0,1,2 respectively.
 
-  Tensors can be stored in ndarrays.
+Tensors can be stored in ndarrays.
 
-  Let's create a tensor with 2 matrices,
-  ```python
-  m1=np.array([[5,12,6],[-3,0,14]])
-  m2=np.array([[2,1,8],[-6,2,0]])
-  t=np.array([m1,m2])
-  ```
-  Upon printing t we get,
-  ```python
-  array([[[5,12,6],
+Let's create a tensor with 2 matrices,
+```python
+m1=np.array([[5,12,6],[-3,0,14]])
+m2=np.array([[2,1,8],[-6,2,0]])
+t=np.array([m1,m2])
+```
+Upon printing t we get,
+```python
+array([[[5,12,6],
         [-3,0,14]],
   
         [[2,1,8],
         [-6,2,0]]])
-  ```
-  If we check it's shape, we see that is is a **(2,2,3)** object.
+```
+If we check it's shape, we see that is is a **(2,2,3)** object.
 
-  If we want to manually create a tensor we write,
-    ```python
-    t=np.array([[[5,12,6], [-3,0,14]],[[2,1,8], [-6,2,0]]])
-    ```
+If we want to manually create a tensor we write,
+```python
+t=np.array([[[5,12,6], [-3,0,14]],[[2,1,8], [-6,2,0]]])
+```
  ## Addition and Subtraction in Matrices
 
  ### Addition
@@ -167,12 +167,7 @@ A=np.array([[5,12,6],[-3,0,14]])
 B=np.array([[2,1,8],[-6,2,0]])
 C= A-B
   ```
-The element at position A<sub>ij</sub> gets added to the element at position B<sub>ij</sub>. It's that simple!
-The above input will give the resultant C as:
-```python
-array([[7,13,14],
-        [-9,2,14]])
-```
+
 The element at position B<sub>ij</sub> gets subtracted from the element at position A<sub>ij</sub>.
 The above input will give the resultant C as:
 ```python
@@ -181,4 +176,41 @@ array([[3,11,-2],
 ```
 Similarly the same operations can be done with **floating point numbers** as well.
 
+In a similar fashion, we can add  or subtract vectors as well with the condition that they must be of the **same length**.
+```python
+A=np.array([1,2,3,4,5])
+B=np.array([6,7,8,9,10])
+C= A+B
+  ```
+The result is a vector of length 5 with C as,
+```python
+array([7,9,11,13,15])
+```
+ ### Addition of scalars with vectors & matrices
 
+ Scalars show unique behaviour when added to matrices or vectors.
+
+ To demonstrate their behaviour, let's use an example,
+ Let's declare a matrix,
+
+```python
+A=np.array([[5,12,6],[-3,0,14]])
+A+1
+```
+We see that if we perform the above function, i.e. add scalar 1 to the matrix A we get the output,
+```python
+array([[6,13,7],[-2,1,15]])
+```
+We see that the scalar is added to the matrix elementwise, i.e. each element gets incremented by 1.
+
+**The same applies to vectors as well.**
+
+Mathematically, it is not allowed as the shape of scalars are different from vectors or matrices but while programming in Python it works.
+
+## Transpose of Matrices & Vectors
+### Transposing Vectors
+
+If X is the vector, then the transpose of the vector is represented as X<sup>T</sup>. It changes a vector of dimension n x 1 into a vector of dimension 1 x n, i.e. a row vector to a column vector and vice versa.
+
+> * The values are not changing or transforming ; only their position is.
+> * Transposing the same vector (object) twice yields the initial vector (object)
