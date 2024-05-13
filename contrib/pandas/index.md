@@ -7,13 +7,7 @@
 # Basic Mathematics
 ## What is a Matrix?
 A matrix is a collection of numbers ordered in rows and columns. Here is one.
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-</head>
+
 <body>
     <table>
         <tr>
@@ -33,7 +27,7 @@ A matrix is a collection of numbers ordered in rows and columns. Here is one.
         </tr>
     </table>
 </body>
-</html>
+
 
 A matrix is generally written within square brackets[]. The dimensions of a matrix is represented by (Number of rows X Number of columns).The dimensions of the above matrix is 3x3.
 
@@ -64,5 +58,127 @@ Vectors are broadly classified into 2 types:
 - Column Vectors: Is of the form m x 1 where m refers to the number of rows the vector has.
 
 m or n are also called as the length of the column and row vector respectively.
+
+## Arrays in Python
+
+To understand arrays first let us start by declaring scalars, vectors and matrices in Python.
+
+First we need to import numpy. We do so by importing it as 'np' as it provides better readability, namespace clarity and also aligns with the community guidelines.
+
+```
+import numpy as np
+```
+Next up, we declare scalars as,
+```
+s = 5
+```
+
+
+
+Now we declare a vector,
+```python
+v = np.array([5,-2,4])
+```
+On printing v we get the following output,
+```python
+array([5,-2,4])
+```
+By default, a vector is declared as a **'row vector'**.
+
+Finally, we declare matrices,
+```python
+m=np.array([[5,12,6],[-3,0,14]])
+```
+On printing m we get,
+```python
+array([[5,12,6],
+        [-3,0,14]])
+```
+> The type() function is used to return the data type of a given variable.
+
+* The type(s) will return 'int'.
+
+* The type(v) will return 'numpy.ndarray' which represents a **n-dimensional array**, since it is a 1 dimensional array.
+ 
+ * The type(m) will also return 'numpy.ndarray' since it is a 2-dimensional array.
+
+These are some ways in which arrays are useful in python.
+
+> The shape() function is used to return the shape of a given variable.
+
+* m.shape() returns (2,3) since we are dealing with a (2,3) matrix.
+
+* v.shape() returns(3,) indicates it has only one dimensional or that it stores 3 elements in order.
+
+* However, 'int' objects do not have shape and therefore s.shape() gives an error.
+
+  ## What is a Tensor?
+  A Tensor can be thought of as a collection of matrices. It has dimensions k x m x n.
+  **NOTE:** Scalars, vectors and matrices are also tensors of rank 0,1,2 respectively.
+
+  Tensors can be stored in ndarrays.
+
+  Let's create a tensor with 2 matrices,
+  ```python
+  m1=np.array([[5,12,6],[-3,0,14]])
+  m2=np.array([[2,1,8],[-6,2,0]])
+  t=np.array([m1,m2])
+  ```
+  Upon printing t we get,
+  ```python
+  array([[[5,12,6],
+        [-3,0,14]],
+  
+        [[2,1,8],
+        [-6,2,0]]])
+  ```
+  If we check it's shape, we see that is is a **(2,2,3)** object.
+
+  If we want to manually create a tensor we write,
+    ```python
+    t=np.array([[[5,12,6], [-3,0,14]],[[2,1,8], [-6,2,0]]])
+    ```
+ ## Addition and Subtraction in Matrices
+
+ ### Addition
+ For 2 matrices to be added to one another they must have **same dimensions**.
+
+ If we have 2 matrices say,
+
+```python
+A=np.array([[5,12,6],[-3,0,14]])
+B=np.array([[2,1,8],[-6,2,0]])
+C= A+B
+  ```
+The element at position A<sub>ij</sub> gets added to the element at position B<sub>ij</sub>. It's that simple!
+The above input will give the resultant C as:
+```python
+array([[7,13,14],
+        [-9,2,14]])
+```
+### Subtraction
+
+As we know, subtraction is a type of addition, the same rules apply here.
+
+ If we have 2 matrices say,
+
+```python
+A=np.array([[5,12,6],[-3,0,14]])
+B=np.array([[2,1,8],[-6,2,0]])
+C= A-B
+  ```
+The element at position A<sub>ij</sub> gets added to the element at position B<sub>ij</sub>. It's that simple!
+The above input will give the resultant C as:
+```python
+array([[7,13,14],
+        [-9,2,14]])
+```
+The element at position B<sub>ij</sub> gets subtracted from the element at position A<sub>ij</sub>.
+The above input will give the resultant C as:
+```python
+array([[3,11,-2],
+        [3,-2,14]])
+```
+Similarly the same operations can be done with **floating point numbers** as well.
 
 
