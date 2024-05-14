@@ -353,8 +353,8 @@ For example, let's use multiply a row vector to a column vector to understand it
 ```
 Now, let's multiply a 2 x 3 matrix with a 3 x 2 matrix.
 ```
- ([[A1,A2,A3],  * ([[B1,B2]         ([[ (A1 * B1 + A2 * B3 + A3 * B5) , (A1 * B2 + A2 * B4 + A3 * B6)]
-   [A4,A5,A6]])     [B3,B4],    =    [ (A4 * B1 + A5 * B3 + A6 * B5)  , (A4 * B2 + A5 * B4 + A6 * B6)]])
+ ([[A1,A2,A3],  * ([[B1,B2]       ([[(A1 * B1 + A2 * B3 + A3 * B5) , (A1 * B2 + A2 * B4 + A3 * B6)]
+   [A4,A5,A6]])     [B3,B4],  =    [ (A4 * B1 + A5 * B3 + A6 * B5)  , (A4 * B2 + A5 * B4 + A6 * B6)]])
                     [B5,B6]])
 ```
 Thus we obtain a 2 x 2 matrix.
