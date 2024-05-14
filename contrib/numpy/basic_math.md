@@ -23,9 +23,9 @@ A matrix is a collection of numbers ordered in rows and columns. Here is one.
 </body>
 
 
-A matrix is generally written within square brackets[]. The dimensions of a matrix is represented by (Number of rows X Number of columns).The dimensions of the above matrix is 3x3.
+A matrix is generally written within square brackets[]. The dimensions of a matrix is represented by (Number of rows x Number of columns).The dimensions of the above matrix is 3x3.
 
-Matrices are the main characters in mathematical operations like addition, subtraction etc..especially those used in Pandas and NumPy. They can contain only numbers, symbols or expressions.
+Matrices are the main characters in mathematical operations like addition, subtraction etc, especially those used in Pandas and NumPy. They can contain only numbers, symbols or expressions.
 
 In order to refer to a particular element in the matrix we denote it by : 
 A<sub>ij</sub>
@@ -38,12 +38,12 @@ There exists specific cases of matrices which are also widely used.
 
 A matrix with only one row and column i.e. containing only one element is commonly referred to as a scalar.
 
-The numbers [12] ; [-5] ; [0] ; [3.14] all represent scalars. Scalars have 0 dimensions.
+The numbers ```[12] ; [-5] ; [0] ; [3.14]``` all represent scalars. Scalars have 0 dimensions.
 
 ### Vectors
-Vectors are objects with 1 dimension. They sit somewhere between scalars and matrices. They can also be referred to as one dimensional matrices
+Vectors are objects with 1 dimension. They sit somewhere between scalars and matrices. They can also be referred to as one dimensional matrices.
 
-[1 3 5] represents a vector with dimension 1x3.
+```[1 3 5]``` represents a vector with dimension 1x3.
 
 A vector is the simplest linear algebraic object.A matrix can be refered to as a collection of vectors
 
@@ -55,14 +55,14 @@ m or n are also called as the length of the column and row vector respectively.
 
 ## Arrays in Python
 
-To understand arrays first let us start by declaring scalars, vectors and matrices in Python.
+To understand arrays, first let us start by declaring scalars, vectors and matrices in Python.
 
 First we need to import numpy. We do so by importing it as 'np' as it provides better readability, namespace clarity and also aligns with the community guidelines.
 
-```
+```python
 import numpy as np
 ```
-Next up, we declare scalars as,
+Next up, we declare a scalar s as,
 ```
 s = 5
 ```
@@ -90,11 +90,11 @@ array([[5,12,6],
 ```
 > The type() function is used to return the data type of a given variable.
 
-* The type(s) will return 'int'.
+* The type(s) will return **'int'**.
 
-* The type(v) will return 'numpy.ndarray' which represents a **n-dimensional array**, since it is a 1 dimensional array.
+* The type(v) will return **'numpy.ndarray'** which represents a **n-dimensional array**, since it is a 1 dimensional array.
  
- * The type(m) will also return 'numpy.ndarray' since it is a 2-dimensional array.
+ * The type(m) will also return **'numpy.ndarray'** since it is a 2-dimensional array.
 
 These are some ways in which arrays are useful in python.
 
@@ -108,6 +108,7 @@ These are some ways in which arrays are useful in python.
 
 ## What is a Tensor?
 A Tensor can be thought of as a collection of matrices. It has dimensions k x m x n.
+
 **NOTE:** Scalars, vectors and matrices are also tensors of rank 0,1,2 respectively.
 
 Tensors can be stored in ndarrays.
@@ -191,7 +192,7 @@ array([7,9,11,13,15])
 A=np.array([[5,12,6],[-3,0,14]])
 A+1
 ```
-We see that if we perform the above function, i.e. add scalar 1 to the matrix A we get the output,
+We see that if we perform the above function, i.e. add scalar [1] to the matrix A we get the output,
 ```python
 array([[6,13,7],[-2,1,15]])
 ```
@@ -264,13 +265,14 @@ Hope the following examples have cleared your concept on transposing.
 ## Dot Product
 
 > **np.dot()** returns the dot product of two objects
-> Dot product is represented by ( * ), for example x(dot)y = x * y
+> Dot product is represented by ( * ), for example, x(dot)y = x * y
 > 
 ### Scalar * Scalar
 Let's start with scalar multiplication first.
 
-''' [6] * [5] = [30]
-    [10] * [-2] = [-20]'''
+``` [6] * [5] = [30]
+    [10] * [-2] = [-20]
+```
 It is the same multiplication that we are familiar with since learnt as kids.
  Therefore, ```np.dot([6]*[5])``` returns ```30```.
 
