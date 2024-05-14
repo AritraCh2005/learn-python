@@ -213,4 +213,107 @@ Mathematically, it is not allowed as the shape of scalars are different from vec
 If X is the vector, then the transpose of the vector is represented as X<sup>T</sup>. It changes a vector of dimension n x 1 into a vector of dimension 1 x n, i.e. a row vector to a column vector and vice versa.
 
 > * The values are not changing or transforming ; only their position is.
-> * Transposing the same vector (object) twice yields the initial vector (object)
+> * Transposing the same vector (object) twice yields the initial vector (object).
+
+```python
+x=np.array([1,2,3))
+```
+Transposing this in python using ```x.T``` will give
+```python
+array([1,2,3))
+```
+which is the same vector as the one taken as input.
+
+> 1-Dimensional arrays don't really get transposed (in the memory of the computer)
+
+To transpose a vector, we need to reshape it first.
+```python
+x_new= x.reshape(1,3)
+x_new.T
+```
+will now result in the vector getting transposed,
+```python
+array([[1],
+       [2],
+       [3]])
+```
+
+### Transposing Matrices
+
+If M is a matrix, then the transpose of the matrix M is represented as M<sup>T</sup>. When transposed, a m x n matrix becomes a n x m matrix. 
+
+The element M<sub>ij</sub> of the initial matrix becomes the N<sub>ji</sub> where N is the transposed matrix of M.
+
+Let's understand this further with the help of of an example,
+```python
+A = np.array([[1,5,-6],[8,-2,0]])
+```
+The output for the above code snippet will be,
+```python
+array([[1,5,-6],
+        [8,-2,0]])
+```
+>  **array.T** returns the transpose of an array (matrix).
+
+```python
+A.T
+```
+will give the output as,
+```python
+array([[1,8],
+       [5,-2],
+       [-6,0]])
+```
+
+Hope the following examples have cleared your concept on transposing.
+
+## Dot Product
+
+> **np.dot()** returns the dot product of two objects
+> Dot product is represented by ( * ), for example x(dot)y = x * y
+> 
+### Scalar * Scalar
+Let's start with scalar multiplication first.
+
+''' [6] * [5] = [30]
+    [10] * [-2] = [-20]'''
+It is the same multiplication that we are familiar with since learnt as kids.
+ Therefore, ```np.dot([6]*[5])``` returns ```30```.
+
+### Vector * Vector
+To multiply vectors with one another, they must be of **same length**.
+
+Now let's understand this with an example,
+```python
+x = np.array([2,8,-4])
+y = np.array([1,-7,3])
+```
+
+The dot product returns the elementwise product of the vector i.e. 
+x * y = ( x<sub>1</sub>  *  y<sub>1</sub> ) + ( x<sub>2</sub> *  y<sub>2</sub> ) + ( x<sub>3</sub> *  y<sub>3</sub> ) in the above example.
+
+Therefore, ```np.dot(x,y)``` gives ```[-66]``` as the input.
+
+We observe that **dot product of 2 vectors returns a scalar**.
+
+#### Scalar * Vector
+
+When we multiply a scalar with a vector, we observe that each element of the vector gets multiplied to the scalar individually.
+ 
+A scalar k when multiplied to a vector v([x1,x2,x3]) gives the product = [(k * x1) + (k * x2) + (k * x3)]
+
+An example would bring further clarity,
+```python
+y = np.array([1,-7,3])
+y*5
+```
+will give the following output
+```python
+array[(5,-35,15)]
+```
+
+We observe that **dot product of 2 vectors returns a scalar**.
+
+We observe that **dot product of a vector and a scalar returns a vector**.
+
+### Dot Product of Matrices 
