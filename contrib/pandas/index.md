@@ -316,4 +316,60 @@ We observe that **dot product of 2 vectors returns a scalar**.
 
 We observe that **dot product of a vector and a scalar returns a vector**.
 
-### Dot Product of Matrices 
+## Dot Product of Matrices 
+
+### Scalar * Matrix
+ Dot product of a scalar with a matrix works similar to dot product of a vector with a scalar.
+Now, we come to a very important concept which will be very useful to us while working in Python.
+
+Each element of the vector gets multiplied to the scalar individually.
+
+```python
+A = np.array([[1,5,-6],[8,-2,0]])
+B = 3 * A
+```
+will give the resultant B as  
+```python
+array([[3,15,-18],
+       [24,-6,0]])
+```
+Thus each element gets multiplied by 3.
+> NOTE: The dot product of a scalar and a matrix gives a matrix of the same shape as the input matrix.
+
+### Matrix * Matrix
+ A matrix can be multipied to a matrix. However it has certain compatibility measures,
+ * We can only multiply an m x n matrix with an n x k matrix
+ * Basically the 2nd dimension of the first matrix has to match the 1st dimension of the 2nd matrix.
+> The output of a m x n matrix with a n x k matrix gives a **m x k** matrix.
+
+**Whenever we have a dot product of 2 matrices, we multiply row vectors within one matrix to the column vector of 2nd matrix.**
+
+For example, let's use multiply a row vector to a column vector to understand it further. 
+
+```
+            ([[1]
+ ([2 8 4]) *  [2]     =    [(2*1) + (8*2) + (4*3)] = [30]
+              [3]])
+```
+Now, let's multiply a 2 x 3 matrix with a 3 x 2 matrix.
+```
+ ([[A1,A2,A3],  * ([[B1,B2]         ([[ (A1 * B1 + A2 * B3 + A3 * B5) , (A1 * B2 + A2 * B4 + A3 * B6)]
+   [A4,A5,A6]])     [B3,B4],    =    [ (A4 * B1 + A5 * B3 + A6 * B5)  , (A4 * B2 + A5 * B4 + A6 * B6)]])
+                    [B5,B6]])
+```
+Thus we obtain a 2 x 2 matrix.
+
+We use the np.dot() method to directly obtain the dot product of the 2 matrices.
+
+Now let's do an example using python just to solidify our knowledge.
+
+```python
+A=np.array([[5,12,6],[-3,0,14]])
+B=np.array([[2,-1],[8,0],[3,0]])
+np.dot(A,B)
+```
+The output we obtain is,
+```python
+array[[124,-5],
+      [36, 3]])
+```
