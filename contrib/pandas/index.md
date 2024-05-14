@@ -296,7 +296,7 @@ Therefore, ```np.dot(x,y)``` gives ```[-66]``` as the input.
 
 We observe that **dot product of 2 vectors returns a scalar**.
 
-#### Scalar * Vector
+### Scalar * Vector
 
 When we multiply a scalar with a vector, we observe that each element of the vector gets multiplied to the scalar individually.
  
